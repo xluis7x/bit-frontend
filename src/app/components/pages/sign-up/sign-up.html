@@ -1,11 +1,11 @@
 <form [formGroup]="singUpForm" (ngSubmit)="handleSignUp()">
     <div>
         <label for="name">Student's Name:</label>
-        <input id="name" type="text" formControlName="name">
+        <input id="name" type="text" formControlName="studentName">
     </div>
     <div>
         <label for="username">Username:</label>
-        <input id="username" type="text" formControlName="username">
+        <input id="username" type="text" formControlName="studentUser">
     </div>
     <div>
         <label for="email">Email:</label>
@@ -17,7 +17,7 @@
     </div>
     <div>
         <label for="image">Image:</label>
-        <input id="image" type="url" formControlName="image">
+        <input id="image" type="url" formControlName="studentImg">
     </div>
     <div>
         <label for="study">What are you studying?:</label>
