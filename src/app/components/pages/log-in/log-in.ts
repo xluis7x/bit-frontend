@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angula
 import { ToastrService } from 'ngx-toastr';
 import { LoginUser } from '../../../services/login';
 
+
 @Component({
   selector: 'app-log-in',
   imports: [ReactiveFormsModule],
@@ -36,3 +37,20 @@ router = inject(Router);
     }
   }
 }
+ /* handleSignUp () {
+    if (this.loginForm.valid) {
+      console.log("handle submit: ", this.loginForm.value)
+      this.loginUser.loginUser(this.loginForm.value).subscribe( (res:any) => {
+        console.log("response: ", res)
+        if (res.allOK) {
+          console.log("res: ", res)
+          this.router.navigateByUrl("/tasks")          
+        } else {
+          console.log("An error occurred")
+        }
+      })
+    } else {
+      console.log("Invalid info")
+    }
+  }
+}*/

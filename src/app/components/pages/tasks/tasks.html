@@ -1,1 +1,46 @@
-<p>tasks works!</p>
+<form [formGroup]="taskForm" (ngSubmit)="taskId ? editTask() : createTask()">
+    <div class="width row g-3">
+      <div class="col-md-5">
+        <label class="form-label">Task: </label>
+        <input class="form-control" formControlName="taskName" />
+      </div>
+      <div class="col-md-5">
+        <label class="form-label">Due Date: </label>
+        <input class="form-control" formControlName="dueDate" />
+      </div>
+      <div class="col-md-5">
+        <label class="form-label">Relevance: </label>
+        <input class="form-control" formControlName="relevance" />
+      </div>
+      <div class="col-md-5">
+        <label class="form-label">Completed: </label>
+        <input class="form-control" formControlName="completed" />
+      </div>
+    </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<div class="table-responsive" style="max-height: 250px; overflow-y: auto;">
+  <table class="table table-hover mt-3">
+    <thead class="table-light sticky-top">
+      <tr>
+        <th>Task</th>
+        <th>Due Date</th>
+        <th>Relevance</th>
+        <th>Completed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.taskName }}</td>
+        <td>{{ task.dueDate }}</td>
+        <td>{{ task.relevance }}</td>
+        <td>{{ task.completed }}</td>
+         <td>
+          <button class="btn btn-sm btn-success me-1" (click)="selectTask(task)">Edit</button>
+          <button class="btn btn-sm btn-warning" (click)="deleteTask(task._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
